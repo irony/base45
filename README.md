@@ -4,6 +4,10 @@ _base45_ is a base45 encoder/decoder that is fully compatible [draft-faltstrom-b
 
 [![Node.js Package](https://github.com/irony/base45/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/irony/base45/actions/workflows/npm-publish.yml)
 
+## Introduction
+
+When using QR or Aztec codes a different encoding scheme is needed than the already established base 64, base 32 and base 16 encoding
+
 ## Installation
 
 Via [npm](https://www.npmjs.com/):
@@ -25,33 +29,23 @@ This function takes a byte string (the `input` parameter) and encodes it accordi
 const encodedData = base45.encode(input);
 ```
 
-To base45-encode any Unicode string, [encode it as UTF-8 first](https://github.com/mathiasbynens/utf8.js#utf8encodestring):
+To base45-encode a utf8 encoded string.
 
 ```js
 const base45 = require('base45');
-const utf8 = require('utf8');
-
 const text = 'foo © bar 𝌆 baz';
-const bytes = utf8.encode(text);
-const encoded = base45.encode(bytes);
+const encoded = base45.encode(text);
 console.log(encoded);
 // → 'X.C82EIROA44GECH74C-J1/GUJCW2'
 ```
 
 ### `base45.decode(input)`
 
-This function takes a base45-encoded string (the `input` parameter) and decodes it. The return value is in the form of a string containing only characters in the range from U+0000 to U+00FF, each representing a binary byte with values `0x00` to `0xFF`. 
+This function takes a base45-encoded string (the `input` parameter) and decodes it. The return value is decoded into a utf8 string.
 
 ```js
 const decodedData = base45.decode(encodedData);
-```
-
-To base45-decode UTF-8-encoded data back into a Unicode string, [UTF-8-decode it](https://github.com/mathiasbynens/utf8.js#utf8decodebytestring) after base45-decoding it:
-
-```js
-const encoded = 'X.C82EIROA44GECH74C-J1/GUJCW2';
-const bytes = base45.decode(encoded);
-const text = utf8.decode(bytes);
+const text = base45.decode(encoded);
 console.log(text);
 // → 'foo © bar 𝌆 baz'
 ```
@@ -59,7 +53,6 @@ console.log(text);
 ## Author
 
 | (https://twitter.com/landgren "Follow @landgren on Twitter") |
-|---|
 
 ## License
 

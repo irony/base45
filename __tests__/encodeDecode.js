@@ -4,6 +4,8 @@ const cases = [
   ['Hello!!', '%69 VD92EX0'],
   ['AB', 'BB8'],
   ['base-45', 'UJCLQE7W581'],
+  ['foo © bar 𝌆 baz', 'X.C82EIROA44GECH74C-J1/GUJCW2'],
+  ['I ❤️ Räksmörgås', '0B98TSD%K.EN*34:WOCQDJ*D-2ND5DA-K'],
   ['ietf!', 'QED8WEX0'],
   [
     'The quick brown fox jumps over the lazy dog',
@@ -24,7 +26,15 @@ describe('decoding', () => {
       const encoded = encode(text)
       const result = decode(encoded)
       expect(result).toEqual(text)
-      console.log(result, text)
+    })
+  })
+})
+
+describe('encoding', () => {
+  test('all test cases', () => {
+    cases.forEach(([text, encoded]) => {
+      const result = encode(text)
+      expect(result).toEqual(encoded)
     })
   })
 })
