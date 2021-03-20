@@ -1,3 +1,4 @@
-const {decode, encode} = require('./lib/base45')
+const { encode, decode } = require('./')
+const text = 'foo © bar 𝌆 baz'
 
-console.log(decode(encode('Hello!!')))
+console.log(decode(encode(text)))
