@@ -2,6 +2,8 @@
 
 _base45_ is a base45 encoder/decoder that is fully compatible [draft-faltstrom-base45-02](https://www.ietf.org/id/draft-faltstrom-base45-02.txt).
 
+[![Node.js Package](https://github.com/irony/base45/actions/workflows/npm-publish.yml/badge.svg)](https://github.com/irony/base45/actions/workflows/npm-publish.yml)
+
 ## Installation
 
 Via [npm](https://www.npmjs.com/):
