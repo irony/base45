@@ -4,7 +4,6 @@ const cases = [
   ['Hello!!', '%69 VD92EX0'],
   ['AB', 'BB8'],
   ['base-45', 'UJCLQE7W581'],
-  ['foo © bar 𝌆 baz', 'X.C82EIROA44GECH74C-J1/GUJCW2'],
   ['ietf!', 'QED8WEX0'],
   [
     'The quick brown fox jumps over the lazy dog',
