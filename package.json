@@ -1,14 +1,14 @@
 {
   "name": "base45",
   "version": "1.0.0",
-  "description": "",
+  "description": "base45 encoder/decoder in javascript",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest __tests__",
     "dev": "jest __tests__ --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christian Landgren",
+  "license": "MIT",
   "dependencies": {
     "jest": "^26.6.3"
   },
