@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const { encode } = require('../lib/base45')
+const { decode } = require('../lib/base45')
 const cases = [
   ['Hello!!', '%69 VD92EX0'],
   ['AB', 'BB8'],
@@ -11,11 +11,11 @@ const cases = [
   ]
 ]
 
-describe('encoding', () => {
+describe('decoding', () => {
   test('all test cases', () => {
-    cases.forEach(([text, encoded]) => {
-      const result = encode(text)
-      expect(result).toEqual(encoded)
+    cases.forEach(([expected, encoded]) => {
+      const result = decode(encoded)
+      expect(result).toEqual(expected)
     })
   })
 })

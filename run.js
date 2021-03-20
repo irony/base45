@@ -1,3 +1,3 @@
-const encode = require('./lib/encode')
+const {decode, encode} = require('./lib/base45')
 
-console.log(encode('A'))
+console.log(decode(encode('Hello!!')))
