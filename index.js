@@ -1,4 +1,1 @@
-module.exports = {
-  encode: require('./lib/encode'),
-  decode: require('./lib/decode')
-}
+module.exports = require('./lib/base45')
