@@ -3,6 +3,7 @@ const { encode, decode } = require('../lib/base45')
 const cases = [
   ['Hello!!', '%69 VD92EX0'],
   ['AB', 'BB8'],
+  ['foo © bar 𝌆 baz', 'X.C82EIROA44GECH74C-J1/GUJCW2'],
   ['base-45', 'UJCLQE7W581'],
   ['ietf!', 'QED8WEX0'],
   [
@@ -14,7 +15,7 @@ const cases = [
 describe('decoding', () => {
   test('all test cases', () => {
     cases.forEach(([expected, encoded]) => {
-      const result = decode(encoded)
+      const result = decode(encoded).toString('utf-8')
       expect(result).toEqual(expected)
     })
   })
@@ -22,7 +23,7 @@ describe('decoding', () => {
   test('first encode and then decode the test cases', () => {
     cases.forEach(([text]) => {
       const encoded = encode(text)
-      const result = decode(encoded)
+      const result = decode(encoded).toString('utf-8')
       expect(result).toEqual(text)
     })
   })
