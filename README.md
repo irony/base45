@@ -23,7 +23,7 @@ const base45 = require('base45');
 ## API
 ### `base45.encode(input)`
 
-This function takes a byte string (the `input` parameter) and encodes it according to base45. The input data must be in the form of a string containing only characters in the range from U+0000 to U+00FF, each representing a binary byte with values `0x00` to `0xFF`.
+This function takes a byte string (the `input` parameter) and encodes it according to base45. The input data must be in the form of a string containing only characters in the range from U+0000 to U+00FF, each representing a binary byte with values `0x00` to `0xFF` or a binary buffer in the same range.
 
 ```js
 const encodedData = base45.encode(input);
@@ -41,11 +41,11 @@ console.log(encoded);
 
 ### `base45.decode(input)`
 
-This function takes a base45-encoded string (the `input` parameter) and decodes it. The return value is decoded into a utf8 string.
+This function takes a base45-encoded string (the `input` parameter) and decodes it and returns a buffer. (THIS WAS PREVIOUSLY A STRING IN 1.X version)
 
 ```js
 const decodedData = base45.decode(encodedData);
-const text = base45.decode(encoded);
+const text = base45.decode(encoded).toString('utf-8');
 console.log(text);
 // → 'foo © bar 𝌆 baz'
 ```
