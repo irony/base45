@@ -2,6 +2,9 @@
   "name": "base45",
   "version": "2.0.0",
   "description": "base45 encoder/decoder in javascript",
+  "repository": {
+    "url": "https://github.com/irony/base45"
+  },
   "main": "index.js",
   "scripts": {
     "test": "jest __tests__",
