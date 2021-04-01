@@ -41,7 +41,7 @@ console.log(encoded);
 
 ### `base45.decode(input)`
 
-This function takes a base45-encoded string (the `input` parameter) and decodes it and returns a buffer. (THIS WAS PREVIOUSLY A STRING IN 1.X version)
+This function takes a base45-encoded string (the `input` parameter) and decodes it and returns a buffer. (BREAKING: THIS WAS PREVIOUSLY A STRING IN 2.X version)
 
 ```js
 const decodedData = base45.decode(encodedData);
